@@ -1,0 +1,38 @@
+.container {
+    display: flex;
+    justify-content: center;
+    font-size: 40px;
+    display: grid;
+    grid-template-columns: repeat(1);
+    user-select: none;
+}
+
+.result {
+    width: 100%px;
+    height: 50px;
+    border-style: solid;
+    text-align: right;
+}
+
+.blocks {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.block {
+    margin: 10px;
+    text-align: center;
+    border-style: solid;
+}
+
+div.block[class*="del"] {
+    background-color: coral;
+}
+
+div.block[class*="do"] {
+    background-color: rgb(189, 189, 189);
+}
+
+div.block[class*="all"] {
+    background-color: rgb(240, 66, 66);
+}
