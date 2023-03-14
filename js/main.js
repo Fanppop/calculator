@@ -1,68 +1,71 @@
 let block = document.querySelectorAll(".block");
 let result = document.querySelector(".result");
 
+
+function Action_with(){
+  count++;
+  c = content;
+  result.innerHTML += content;
+}
+
+function Action_delete(){
+  result.innerHTML = null;
+  a = 0;
+  b = 0;
+  c = null;
+  count = 0;
+}
+
+
 let a = 0;
 let b = 0;
 let c = null;
 let content;
 let count = 0;
+let null_result = result.innerHTML = null;
+
+
 for (let i = 0; i < block.length; i++) {
   let blocks = block[i];
   blocks.onclick = () => {
     content = blocks.textContent;
     switch (content) {
       case "+":
-        count++;
-        c = content;
-        result.innerHTML = null;
+        Action_with();
         break;
       case "-":
-        count++;
-        c = content;
-        result.innerHTML = null;
+        Action_with();
         break;
       case "*":
-        count++;
-        c = content;
-        result.innerHTML = null;
+        Action_with();
         break;
       case "/":
-        count++;
-        c = content;
-        result.innerHTML = null;
+        Action_with();
         break;
 
       case "del":
-        result.innerHTML = null;
-        a = 0;
-        b = 0;
-        c = null;
-        count = 0;
+        Action_delete()
         break;
       case "c":
-        result.innerHTML = null;
-        a = 0;
-        b = 0;
-        c = null;
-        count = 0;
+        Action_delete()
         break;
 
       case "=":
         switch (c) {
           case "+":
-            result.innerHTML = null;
+            null_result
             result.innerHTML = a + b;
             break;
           case "-":
-            result.innerHTML = null;
+            null_result
             result.innerHTML = a - b;
             break;
           case "*":
-            result.innerHTML = null;
+            null_result
             result.innerHTML = a * b;
             break;
           case "/":
-            result.innerHTML = null;
+            null_result
             result.innerHTML = a / b;
             break;
         }
@@ -81,18 +84,16 @@ for (let i = 0; i < block.length; i++) {
           alert(
             "Пожалуйста вводите только одну операцию с числами!\n\nPlease use only one operation with numbers!"
           );
-          result.innerHTML = null;
-          a = 0;
-          b = 0;
-          c = null;
-          count = 0;
+          Action_delete()
         }
     }
   };
 }
 
 
-// Фрагмент аналогичного укороченного кода!
+
+// Старый код
+// Old code
  
 
 
